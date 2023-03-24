@@ -1,0 +1,12 @@
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (1/1), done.
+remote: Total 2 (delta 1), reused 2 (delta 1), pack-reused 0
+Unpacking objects: 100% (2/2), 341 bytes | 341.00 KiB/s, done.
+From https://github.com/ankit-makadiya-nexuslink/database
+   0756eb1..9459d90  main       -> origin/main
+Updating 0756eb1..9459d90
+Fast-forward
+ ankit.sql | 6951 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 6951 insertions(+)
+ create mode 100644 ankit.sql
