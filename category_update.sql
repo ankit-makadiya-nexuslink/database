@@ -1,0 +1,1 @@
+UPDATE `categories` SET `deleted_at` = '2023-03-24 17:20:21' WHERE `categories`.`id` = 1;
