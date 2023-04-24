@@ -5,26 +5,16 @@ on:
     branches: [ main ]
 
 jobs:
-  update-version:
+  update_code:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Update version number
-        run: |
-          # Find the current version number in the code
-          CURRENT_VERSION=$(grep 'define.*VERSION' version.php | sed -E 's/.*"(.*)".*/\1/')
-
-          # Increment the version number by one
-          NEW_VERSION=$(php -r "echo implode('.', array_slice(explode('.', '$CURRENT_VERSION'), 0, 2)).'.'.((int)end(explode('.', '$CURRENT_VERSION')) + 1);")
-
-          # Replace the current version number with the new version number
-          sed -i "s/define('VERSION', '$CURRENT_VERSION');/define('VERSION', '$NEW_VERSION');/" version.php
-
-      - name: Commit changes
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git commit -am "Update version number"
-          git push
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Update code
+      run: |
+        php update_version.php
+        git config user.email "github-actions@github.com"
+        git config user.name "Github Actions"
+        git add .
+        git commit -m "Update code"
+        git push origin main
