@@ -16,6 +16,6 @@ jobs:
         php version_update.php
         git config user.email "github-actions@github.com"
         git config user.name "GitHub Actions"
-        git add.
+        git add .
         git commit -m "Version Update"
         git push origin main
